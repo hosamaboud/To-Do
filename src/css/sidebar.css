@@ -1,0 +1,283 @@
+@keyframes gradientShift {
+  0% {
+    background: linear-gradient(to bottom, #c6e7ff, #a594f9);
+  }
+  25% {
+    background: linear-gradient(to bottom, #86b6f6, #008dda);
+  }
+  50% {
+    background: linear-gradient(to bottom, #a0deff, #7b66ff);
+  }
+  75% {
+    background: linear-gradient(to bottom, #7b66ff, #a594f9);
+  }
+  100% {
+    background: linear-gradient(to bottom, #c6e7ff, #a594f9);
+  }
+}
+
+.sidebar {
+  animation: gradientShift 10s infinite alternate ease-in-out;
+  transition: background 0.3s ease;
+  width: 3.5rem;
+  margin-top: 1rem;
+  border-radius: 0 20px 20px 0;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  position: fixed;
+  left: 0;
+  top: 140px;
+  z-index: 999;
+}
+
+.btn-toggle {
+  background: linear-gradient(to right, #a594f9, #008dda);
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin: 0.5rem 0 0 0.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 80px;
+  z-index: 999;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-toggle:hover {
+  background: linear-gradient(to right, #7b66ff, #a0deff);
+  transform: scale(1.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-toggle::after,
+.btn-toggle::before {
+  content: '';
+  position: absolute;
+  background-color: #ffffff;
+  height: 2px;
+  width: 1rem;
+  transition: all 0.3s ease;
+}
+.btn-toggle::before {
+  top: 1rem;
+}
+.btn-toggle::after {
+  top: 1.5rem;
+}
+.btn-toggle.clicked::before {
+  top: 1.2rem;
+  transform: rotate(-135deg);
+}
+.btn-toggle.clicked::after {
+  transform: rotate(135deg);
+  top: 1.2rem;
+}
+.logo {
+  width: 2rem;
+}
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+.slickBar {
+  color: var(--white);
+  background-color: transparent;
+  list-style: none;
+  padding: 2rem 0;
+  display: flex;
+  width: 3.5rem;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  transition: all 0.5s ease;
+  border-radius: 0 20px 20px 0;
+}
+
+.slickBar.clicked {
+  width: 10rem;
+  animation: gradientShift 10s infinite alternate ease-in-out;
+  transition: all 0.5s ease;
+}
+
+.item {
+  display: flex;
+  width: 100%;
+  padding: 1rem 0;
+  padding-left: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--white);
+}
+.item:hover {
+  border-right: 4px solid #a0deff;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+.item:hover img {
+  filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(114deg)
+    brightness(106%) contrast(101%);
+  transform: scale(1.2);
+}
+
+.item img {
+  width: 1.2rem;
+  height: auto;
+  filter: invert(0%) sepia(38%) saturate(2662%) hue-rotate(284deg)
+    brightness(109%) contrast(94%);
+  transition: transform 0.3s ease;
+}
+.text {
+  width: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.text.clicked {
+  width: 100%;
+  margin-left: 1.5rem;
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.3s ease;
+}
+
+.item.active {
+  border-right: 4px solid var(--white);
+}
+.item.active img {
+  filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(114deg)
+    brightness(106%) contrast(101%);
+}
+
+.profile {
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile_img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.profile_img:hover {
+  border: 2px solid #071952;
+  padding: 2px;
+}
+.profile.clicked {
+  width: 10rem;
+  margin-left: 7rem;
+  background: linear-gradient(to bottom, #a594f9, #86b6f6);
+  border-radius: 0 20px 20px 0;
+  transition: all 0.3s ease;
+}
+.profile_img.clicked {
+  transition: all 0.3s ease;
+}
+.profile_details {
+  display: none;
+}
+.profile_details.clicked {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.name {
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.name h4 {
+  display: inline-block;
+}
+.name a {
+  text-decoration: none;
+  font-size: 0.7rem;
+  color: var(--black);
+}
+.name a:hover {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid var(--grey);
+}
+.logout {
+  height: 2rem;
+  width: 2rem;
+  background-color: transparent;
+  border: none;
+}
+.logout img {
+  width: 100%;
+  cursor: pointer;
+  filter: invert(9%) sepia(98%) saturate(6662%) hue-rotate(7deg)
+    brightness(127%) contrast(116%);
+  transition: all 0.3s ease;
+}
+.logout img:hover {
+  border: none;
+  padding: 0;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    margin-top: 5rem;
+    width: 3rem;
+    height: 35rem;
+  }
+
+  .slickBar {
+    width: 3rem;
+  }
+
+  .slickBar.clicked {
+    width: 8rem;
+  }
+
+  .item img {
+    width: 1rem;
+  }
+
+  .text.clicked {
+    font-size: 0.8rem;
+  }
+  .btn-toggle {
+    height: 2.5rem;
+    width: 2.5rem;
+    margin: 4rem 0 0 0.4rem;
+  }
+  .btn-toggle::before {
+    top: 1.4rem;
+  }
+  .btn-toggle::after {
+    top: 1.1rem;
+  }
+
+  .btn-toggle.clicked::before {
+    top: 1.2rem;
+  }
+  .btn-toggle.clicked::after {
+    top: 1.2rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .sidebar_container {
+    display: none;
+  }
+}

@@ -1,0 +1,147 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider_section {
+  height: auto;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.slick-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #803bec;
+}
+
+.info {
+  display: flex;
+  height: 40vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.video_container {
+  width: 90%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.video_container video {
+  border-radius: 10px;
+  width: 100%;
+  padding: 1rem;
+  max-height: 400px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.video_mobile {
+  width: 45%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.video_mobile video {
+  width: 100%;
+  border-radius: 15px;
+  max-height: 50vh;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.projectsList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 20px;
+}
+
+.card {
+  height: 83vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid #ddd;
+  gap: 1%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to right, #7b66ff, #a0deff);
+}
+
+.project_video {
+  width: 60%;
+}
+
+.project_video video {
+  width: -webkit-fill-available;
+}
+
+.info_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info_card a {
+  text-decoration: none;
+  margin-top: 1%;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  border-radius: 10px;
+  background: linear-gradient(to right, #7b66ff, #a0deff);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.info_card a:hover {
+  background: conic-gradient(from 30deg, #e3fdfd, #ebeaff);
+  transform: scale(1.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .project_video {
+    width: 95%;
+  }
+  .card {
+    height: 35rem;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 550px) {
+  .card {
+    height: 35rem;
+    justify-content: space-between;
+  }
+
+  .projectsList {
+    padding: 0;
+  }
+  .info_card a {
+    text-decoration: none;
+    margin-top: 1rem;
+    color: rgba(0, 0, 0, 0.5);
+    padding: 0.2rem;
+    border-radius: 10px;
+    background: linear-gradient(to right, #7b66ff, #a0deff);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  }
+}
